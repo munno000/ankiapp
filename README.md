@@ -27,3 +27,4 @@ python3 -m http.server 5173
 - 正答判定のあいまいマッチ強化
 - 単語ごとの学習履歴と復習アルゴリズム（SRS）
 # ankiapp
+https://munno000.github.io/ankiapp/
