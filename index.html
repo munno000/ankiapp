@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>英単語暗記アプリ</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>英単語暗記アプリ</h1>
+
+      <section class="card" id="editor">
+        <h2>単語を追加</h2>
+        <form id="addForm">
+          <input id="word" placeholder="English word" required />
+          <input id="meaning" placeholder="意味 / Example" />
+          <button type="submit">追加</button>
+        </form>
+        <div class="controls">
+          <button id="exportBtn">エクスポート（JSON）</button>
+          <button id="importBtn">インポート（JSON）</button>
+          <button id="clearBtn">全削除</button>
+          <input id="importFile" type="file" accept="application/json" style="display:none" />
+        </div>
+      </section>
+
+      <section class="card" id="list">
+        <h2>単語一覧</h2>
+        <table id="wordsTable">
+          <thead><tr><th>英単語</th><th>意味 / 例</th><th>操作</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card" id="quiz">
+        <h2>テスト（Quiz）</h2>
+        <div class="quiz-controls">
+          <label><input type="radio" name="dir" value="enjp" checked /> EN → 意味</label>
+          <label><input type="radio" name="dir" value="jpen" /> 意味 → EN</label>
+          <button id="startQuiz">開始</button>
+          <button id="stopQuiz" disabled>停止</button>
+        </div>
+        <div id="quizArea" class="hidden">
+          <div id="prompt" class="prompt"></div>
+          <input id="answer" placeholder="答えを入力" />
+          <div class="quiz-actions">
+            <button id="checkAnswer">確認</button>
+            <button id="showAnswer">答えを見る</button>
+            <button id="nextQuestion">次へ</button>
+          </div>
+          <div id="feedback" class="feedback"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
